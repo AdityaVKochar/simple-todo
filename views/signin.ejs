@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Sign IN</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="main w-full min-h-screen bg-zinc-900 text-black p-10">
+        <h3 class="text-3xl mb-5 text-white">Login</h3>
+        <form action="/login" method="post">
+            <input class='px-2 py-2 outline-none rounded-md' type="text" placeholder="UserName" name="username" required>
+            <input class='px-2 py-2 outline-none rounded-md' type="password" placeholder="Password" name="password" required>
+            <input class='px-5 py-2 bg-blue-800 rounded-md' type="submit" value="Sign In">
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO List</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="main w-full min-h-screen bg-zinc-900 text-white p-10">
+        <h1 class="text-3xl mb-5">To-Do Task Website</h1>
+        <h2 class="text-2xl mb-5">Made by Aditya Vardhan Kochar</h2>
+        <form action="/logout" method="post"><input type="submit" class="text-xl text-red-500 mr-5" value="Logout"></form>
+        <a class="text-xl text-blue-500" href="/create-task">Create Task</a>
+
+        <div class="tasks display-flex flex-wrap my-5 mr-10 py-5 bg-zinc-800 min-w-screen">
+            <% tasks.forEach(task => { %>
+            <div class="task bg-zinc-700 min-w-screen h-200 p-2 m-5 rounded-md">
+                <h4 class="text-2xl "><%= task.taskname %></h4>
+                <p class="text-xl "><%= task.content %></p>
+                <p class="text-xl ">Due Date: <%= task.dueby %></p>
+                <form action="/update-task/<%= task._id %>" method="get"><input type="submit" class="text-xl text-yellow-500 mr-5 mt-3" value="Edit"></form>
+                <form action="/delete-task/<%= task._id %>" method="post"><input type="submit" class="text-xl text-red-500 mr-5" value="Delete"></form>
+            </div>
+            <% }) %>
+        </div>
+    
+    </div>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Update Task</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="main w-full min-h-screen bg-zinc-900 text-black p-10">
+        <h3 class="text-3xl mb-5 text-white">Create Task</h3>
+        <form class="display-flex flex-col" action="/update-task/<%= task._id%>" method="post">
+            <input class='px-2 py-2 outline-none rounded-md my-3' type="text" placeholder="Task Name" name="name" required value=<%= task.taskname %>><br>
+            <textarea class='px-2 py-2 outline-none rounded-md p-3 w-full h-full my-3 resize-none' placeholder="Task Description" name="content" required><%= task.content %></textarea><br>
+            <input class='px-2 py-2 outline-none rounded-md my-3' type="date" name="dueDate" required value='2025-01-01'><br>
+            <input class='px-5 py-2 bg-yellow-800 rounded-md my-3' type="submit" value="Edit">
+        </form>
+    </div>
+</body>
+</html>
