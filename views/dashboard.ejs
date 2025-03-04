@@ -13,12 +13,14 @@
         <form action="/logout" method="post"><input type="submit" class="text-xl text-red-500 mr-5" value="Logout"></form>
         <a class="text-xl text-blue-500" href="/create-task">Create Task</a>
 
+        <% function fD(dateObj) {return dateObj.toLocaleDateString('en-US', {weekday: 'long', month: 'long', day: 'numeric', year: 'numeric'});} %>
+
         <div class="tasks display-flex flex-wrap my-5 mr-10 py-5 bg-zinc-800 min-w-screen">
             <% tasks.forEach(task => { %>
             <div class="task bg-zinc-700 min-w-screen h-200 p-2 m-5 rounded-md">
                 <h4 class="text-2xl "><%= task.taskname %></h4>
                 <p class="text-xl "><%= task.content %></p>
-                <p class="text-xl ">Due Date: <%= task.dueby %></p>
+                <p class="text-xl ">Due Date: <%= fD(task.dueby) %></p>
                 <form action="/update-task/<%= task._id %>" method="get"><input type="submit" class="text-xl text-yellow-500 mr-5 mt-3" value="Edit"></form>
                 <form action="/delete-task/<%= task._id %>" method="post"><input type="submit" class="text-xl text-red-500 mr-5" value="Delete"></form>
             </div>
