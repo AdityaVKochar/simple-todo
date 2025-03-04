@@ -5,6 +5,7 @@ const taskModel = require('./models/task')
 const cookieParser = require('cookie-parser');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
+const path = require('path');
 
 app.set('view engine', 'ejs');
 app.use(express.json());
