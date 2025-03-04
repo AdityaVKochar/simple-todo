@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const uri = {{ secrets.MONGODB_URI }};
+const uri = process.env.MONGODB_URI;
 const clientOptions = { serverApi: { version: '1', strict: true, deprecationErrors: true } };
 
 async function run() {
